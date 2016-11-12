@@ -45,6 +45,7 @@ catalog/product_*/*
 catalog/product/product/*
 export/*
 css/*
+css_secure/*
 js/*
 tmp/*
 .svn/*
