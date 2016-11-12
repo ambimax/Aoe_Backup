@@ -215,6 +215,11 @@ class Aoe_Backup_Model_Cron {
             $arguments[] = 's3 cp';
             $arguments[] = $localFile;
             $arguments[] = $remoteFile;
+
+            if('' !== ($additional_arguments = Mage::getStoreConfig('system/aoe_backup/aws_arguments'))) {
+                $arguments[] = $additional_arguments;
+            }
+
             $output = array();
             $returnVar = null;
             $command = $pathAwsCli .' ' . implode(' ', $arguments);
